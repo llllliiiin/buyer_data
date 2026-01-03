@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>充足率マップ</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; }
+    #map { height: 90vh; width: 100%; }
+    #controls { padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="controls">
+    月：
+    <select id="monthSelect">
+      <option value="8">8月</option>
+      <option value="9" selected>9月</option>
+    </select>
+    日付：
+    <select id="dateSelect"></select>
+  </div>
+  <div id="map"></div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+  <!-- データ -->
+  <script src="coords.js"></script>
+  <script src="data.js"></script>
+  <script src="data_9.js"></script>
+  <script src="flow_data.js"></script>
+  <script src="flow_data_9.js"></script>
+  
+  <!-- 地図描画 -->
+  <script src="map.js"></script>
+
+  <script>
+    // キャッシュ対策（必要なら）
+    // const version = Date.now();
+    // function loadScript(filename, callback) {
+    //   const script = document.createElement('script');
+    //   script.src = `${filename}?v=${version}`;
+    //   script.onload = callback;
+    //   document.head.appendChild(script);
+    // }
+    // loadScript('coords.js', () => {
+    //   loadScript('data.js', () => {
+    //     loadScript('data_9.js', () => {
+    //       loadScript('flow_data.js', () => {
+    //         loadScript('flow_data_9.js', () => {
+    //           loadScript('map.js');
+    //         });
+    //       });
+    //     });
+    //   });
+    // });
+  </script>
+</body>
+</html>
